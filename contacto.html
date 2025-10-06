@@ -33,16 +33,16 @@
 
     <header class="encabezado">
         <img class="header-logo1" src="/img/logo.png" alt="Logo de Antonella Novias" width="160px">
-        
+        <!--MENÚ DE NAVEGACIÓN-->
         <nav>
             <div class="nav-container">
                 <ul class="nav-list">
-                    <li><a href="#"> Inicio </a> </li>
+                    <li><a href="index.html"> Inicio </a> </li>
                     <li><a href="#"> Vestidos de 15 </a> </li>
                     <li><a href="#"> Novias </a> </li>
                     <li><a href="#"> Alquiler de trajes </a> </li>
                     <li><a href="#reseñas"> Reseñas </a> </li>
-                    <li><a href="/index/contacto.html" target="_blank"> Contacto </a> </li>
+                    <li><a href="#"> Contacto </a> </li>
                 </ul>
 
                 <div class="nav-icons">
@@ -58,60 +58,35 @@
     </header>
 
     <main>
-        <section>
-            <div class="hero-container">
-                <img src="/img/banner.png" alt="banner">
-                <a href="#" class="hero-banner-button">Ver catálogo</a>
-            </div>
+        <section class="contact-section">
+            <div class="contact-container">
+                <h2>¡Contáctanos!</h2>
+                <p>Escríbinos tus consultas sobre precios, modelos o cualquier duda.</p>
 
-            <h2 class="products-title-container">Nuestros diseños destacados</h2>
-            <section class="products-container">
+                <form class="contact-form" action="https://formspree.io/f/xwprqrkb" method="POST">
+                    <label for="name">Nombre completo</label>
+                    <input type="text" id="name" name="name" placeholder="Tu nombre" required>
 
-                <article class="product-card">
-                    <img src="/img/product_card1.jpeg" alt="Vestido de 15 verde malva con flores">
-                    <h3 class="product-name">Vestido Flower</h3>
-                    <p class="product-description">A medida y color a elección.</p>
-                    <button class="product-button">Consultar precio</button>
-                </article>
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
 
-                <article class="product-card">
-                    <img src="/img/product_card2.jpeg" alt="Vestido de 15 lila con mariposas">
-                    <h3 class="product-name">Vestido Amatista</h3>
-                    <p class="product-description">A medida y color a elección.</p>
-                    <button class="product-button">Consultar precio</button>
-                </article>
+                    <label for="service">Servicio de interés</label>
+                    <select id="service" name="service" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="vestido-15">Vestido de 15</option>
+                        <option value="vestido-novia">Vestido de novia</option>
+                        <option value="alquiler-traje">Alquiler de traje</option>
+                    </select>
 
-                <article class="product-card">
-                    <img src="/img/product_card3.jpeg" alt="Vestido de 15 celeste con mariposas">
-                    <h3 class="product-name">Vestido Butterfly</h3>
-                    <p class="product-description">A medida y color a elección.</p>
-                    <button class="product-button">Consultar precio</button>
-                </article>
-            </section>
+                    <label for="message">Consulta</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Escribe tu consulta..."
+                        required></textarea>
 
-        </section>
-
-        <section id="reseñas" class="reseñas">
-            <h2>Reseñas de nuestras clientas</h2>
-            <div class="reseñas-grid">
-
-                <article class="reseña">
-                    <p class="texto">“El vestido llegó rapidísimo y la calidad es excelente. ¡Voy a volver a comprar!”
-                    </p>
-                    <p class="cliente">– Antonella R.</p>
-                </article>
-
-                <article class="reseña">
-                    <p class="texto">“Me encantó la confección, se nota que está hecho con mucho cuidado.”</p>
-                    <p class="cliente">– Camila G.</p>
-                </article>
-
-                <article class="reseña">
-                    <p class="texto">“El trato fue muy amable y el vestido quedó tal como lo soñaba.”</p>
-                    <p class="cliente">– Sofía L.</p>
-                </article>
+                    <button type="submit">Enviar</button>
+                </form>
             </div>
         </section>
+
 
     </main>
 
@@ -169,12 +144,9 @@
             <h4 class="footer-title"> Newsletter </h4>
             <ul class="footer-list">
                 <li><a href="#"> Suscribite a novedades y promociones </a></li>
-                <form action="#" method="post" class="footer-email-newsletter">
-                    <input type="email" id="email-newsletter" name="email-new" placeholder="tu@correo.com" required>
-                    <i class="fa-solid fa-arrow-right"></i>
-                </form>
             </ul>
         </div>
+
 
     </footer>
 
