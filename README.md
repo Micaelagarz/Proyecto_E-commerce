@@ -1,0 +1,3 @@
+Antonella Novias es un negocio dedicado a la venta y alquiler de vestidos de fiesta, incluyendo vestidos de 15, novias y trajes a medida. La página permite a los usuarios explorar los distintos servicios, conocer la historia de la empresa y contactarse directamente paa consultas sobre precios, disponibilidad y personalización de vestidos.
+
+El propósito de la página es crear una experiencia intuitiva y estetica para clientes que buscan vestidos de fiesta y trajes, facilitando la navegación, selección de productos y contacto directo con la tienda.
