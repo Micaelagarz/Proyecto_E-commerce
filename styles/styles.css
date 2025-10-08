@@ -17,8 +17,6 @@ body {
   min-height: 100vh;
 }
 
-
-
 .header-logo1 {
   height: 10rem;
   width: 32rem;
@@ -42,7 +40,7 @@ body {
 .nav-container {
   display: flex;
   align-items: center;
-  gap: 30rem;
+  gap:15rem;
 }
 
 .nav-icons {
