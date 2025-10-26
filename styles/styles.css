@@ -10,18 +10,140 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+  padding: 0;
+  margin: 0;
 }
 
 body {
+  max-width: 200rem;
+  margin: 0 auto;
+  font-family: "Lato", sans-serif;
+  padding: 0 2rem;
+}
+
+figure {
+  display: flex;
+}
+
+.banner {
+  text-align: center;
+  padding-top: 7rem;
+}
+
+.banner-container{
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  justify-content: space-between;
-  font-family: 'Lato', sans-serif;
-  font-size: 1.6rem;
-  background-color: #ffffff;
-  padding-top: 6rem;
+  align-items: center;
+  padding: 30px 30px 0;
+  max-width: 120rem;
+  margin: 0 auto;
 }
+
+.banner-bg{
+  position: relative; 
+  background-color: #e6a7ce;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.banner-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #e086bd, #ffd4dc); /* tu degradado */
+  opacity: 0.9; /* podes ajustar la intensidad */
+  z-index: 1; /* detrás del contenido */
+  border-radius: 25px; /* mismo borde que .banner-bg */
+}
+
+
+
+.banner-bg {
+  position: relative;
+  background-color: #e6a7ce;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+
+
+.banner-title{
+  font-family: "Playfair Display", serif;
+  font-size: 45px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.banner-description{
+  font-size: 20px;
+  max-width: 85%;
+  margin: 0 auto 15px;
+  text-align:center;
+}
+
+.banner-title,
+.banner-description{
+  color: #ffffff;
+  
+}
+
+.button{
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #eac6dc83;
+  padding: 10px 15px;
+  display: flex;
+  max-width: fit-content;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin: 0 auto;
+  border-radius: 25px;
+   border-radius: 4rem;
+  border: 2px solid #ffffff;
+  
+}
+
+
+.button:hover,
+.button:focus{
+  background-color: #d57db579;
+}
+
+@media (min-width: 768px) {
+  .banner {
+    text-align: left;
+
+  }
+
+  .banner-container{
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0px 30px;
+}
+
+.button{
+  margin-left: 0;
+  margin: 0 auto;
+}
+
+
+
+
+}
+
+
 
 /* Esconder elementos visualmente */
 .visually-hidden {
@@ -75,7 +197,7 @@ nav ul {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  padding 0;
+  padding: 0;
 }
 
 .nav-icons {
@@ -96,19 +218,22 @@ nav a {
   color: #1d1d1d;
 }
 
-/* Hero-Banner*/
+
+/* Hero-Banner
 .hero-container {
   position: relative;
+   overflow: hidden;  
 }
 
 /* Para aplicar degradado por encima de la imagen */
-.hero-container::after {
+/*.hero-container::after {
   content: "";
   position: absolute;
-  top: 43.5rem;
+  bottom: 0;
   left: 0;
+  top: 70%;
   width: 100%;
-  height: 40%;
+  height: 30%;
   background: linear-gradient(to bottom,
       rgba(255, 255, 255, 0) 0%,
       rgba(255, 255, 255, 0.3) 30%,
@@ -116,34 +241,41 @@ nav a {
       rgb(255, 255, 255) 90%);
   pointer-events: none;
   z-index: 2;
-}
+} */
 
-.hero-container img {
+/*.hero-container img {
   display: block;
   width: 100%;
   height: auto;
-}
+}*/
 
-.hero-banner-button {
+/*.hero-banner-button {
   position: absolute;
-  top: 77.5%;
-  left: 86%;
-  transform: translate(-50%, -50%);
-  padding: 15px 30px;
-  background-color: rgba(217, 155, 210, 0.454);
+  bottom: 10%; 
+  right: 10%;  
+  padding: clamp(0.8rem, 1.5vw, 1.2rem) clamp(1.5rem, 2vw, 2rem);
+  background-color: rgba(217, 155, 210, 0.45);
   font-family: "Lato", sans-serif;
-  font-size: 2.5rem;
+  font-size: clamp(1.6rem, 2vw, 2.2rem); 
   font-weight: 600;
   color: #ffffff;
   text-decoration: none;
   border-radius: 4rem;
   border: 2px solid #ffffff;
-  height: 6.5rem;
+  height: auto; 
+  max-width: 35%;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 3;
+  transition: all 0.3s ease;
 }
+ */
 
-.hero-banner-button:hover {
+/*.hero-banner-button:hover {
   background-color: #dc6fce8b;
 }
+*/
 
 /* Formulario de contacto */
 .contact-section {
@@ -380,7 +512,20 @@ footer {
   cursor: pointer;
 }
 
-/* PARA HACER RESPONSIVO EL FORMULARIO DE CONTACTO */
+/* ================== RESPONSIVE ================== */
+
+/* Menu hamburger */
+
+.nav-toggle {
+  /* para que no se vea en computadora */
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+}
+
+/* Formulario de contacto - Responsive */
 @media (max-width: 480px) {
   .contact-container {
     padding: 1rem;
@@ -395,25 +540,11 @@ footer {
     gap: 1.5rem;
   }
 
-  .hero-banner-button {
-    font-size: 2rem;
-    padding: 1rem 2rem;
-  }
-
+ 
 }
 
-/* Menu hamburger */
-
-.nav-toggle {
-  /* para que no se vea en computadora */
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-
-}
-
-@media (max-width: 992px) {
+/* Laptop / Desktop mediano */
+@media (max-width: 1200px) {
 
   body {
     padding-top: 6rem;
@@ -463,11 +594,15 @@ footer {
     padding-top: 0.5rem;
     padding-left: 1rem;
   }
+
+  
 }
+
+/* Tablets */
 
 @media(max-width: 450px) {
 
-  .header-logo1{
+  .header-logo1 {
     padding-left: 0;
   }
 
@@ -476,5 +611,7 @@ footer {
     font-size: 1.7rem;
     gap: 1rem;
   }
+
+ 
 
 }
