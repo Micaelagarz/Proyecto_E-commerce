@@ -27,7 +27,7 @@ figure {
 
 .banner {
   text-align: center;
-  padding-top: 7rem;
+  padding-top: 6.5rem;
 }
 
 .banner-container{
@@ -70,22 +70,20 @@ figure {
   overflow: hidden;
 }
 
-
-
 .banner-title{
   font-family: "Playfair Display", serif;
   font-size: 45px;
   font-weight: 700;
-  margin-bottom: 10px;
   text-align: center;
 }
 
 .banner-description{
   font-size: 20px;
   max-width: 85%;
-  margin: 0 auto 15px;
+  margin: 5rem auto;
   text-align:center;
 }
+
 
 .banner-title,
 .banner-description{
@@ -93,30 +91,40 @@ figure {
   
 }
 
-.button{
+.banner_buttons{
+  display: flex;
+}
+
+.banner_buttons i{
+  padding-left: 1rem;
+}
+
+.button_cat,
+.button_info{
   text-decoration: none;
   font-size: 2rem;
   font-weight: 700;
   border: none;
   outline: none;
-  text-transform: uppercase;
   color: #ffffff;
   background-color: #eac6dc83;
-  padding: 10px 15px;
-  display: flex;
+  padding: 15px 30px;
   max-width: fit-content;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
   margin: 0 auto;
   border-radius: 25px;
-   border-radius: 4rem;
+  border-radius: 4rem;
   border: 2px solid #ffffff;
-  
 }
 
+.button_cat:hover,
+.button_cat:focus{
+  background-color: #d57db579;
+}
 
-.button:hover,
-.button:focus{
+.button_info:hover,
+.button_info:focus{
   background-color: #d57db579;
 }
 
@@ -408,13 +416,13 @@ nav a {
 
 .product-card {
   background: #fff;
-  border-radius: 10px;
   width: 30rem;
   text-align: center;
 }
 
 .product-card img {
   width: 100%;
+  border-radius: 10px;
   height: auto;
 }
 
