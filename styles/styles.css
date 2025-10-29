@@ -43,7 +43,7 @@ figure {
 
 .banner-bg{
   position: relative; 
-  background-color: #e6a7ce;
+  background-color: #65af64;
   border-radius: 25px;
   overflow: hidden;
 }
@@ -55,7 +55,7 @@ figure {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, #e086bd, #ffd4dc); /* tu degradado */
+  background: linear-gradient(to right, #4a8a50, #abe0d6); /* tu degradado */
   opacity: 0.9; /* podes ajustar la intensidad */
   z-index: 1; /* detrás del contenido */
   border-radius: 25px; /* mismo borde que .banner-bg */
@@ -72,15 +72,15 @@ figure {
 
 .banner-title{
   font-family: "Playfair Display", serif;
-  font-size: 45px;
+  font-size: 40px;
   font-weight: 700;
   text-align: center;
 }
 
 .banner-description{
   font-size: 20px;
-  max-width: 85%;
-  margin: 5rem auto;
+  max-width: 100%;
+  margin: 3rem auto;
   text-align:center;
 }
 
@@ -179,7 +179,7 @@ figure {
   height: 6rem;
   width: auto;
   margin: 0;
-  padding-left: 1rem;
+  
 }
 
 .nav-container {
