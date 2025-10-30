@@ -18,7 +18,6 @@ body {
   max-width: 200rem;
   margin: 0 auto;
   font-family: "Lato", sans-serif;
-  padding: 0 2rem;
 }
 
 figure {
@@ -27,7 +26,6 @@ figure {
 
 .banner {
   text-align: center;
-  padding-top: 6.5rem;
 }
 
 .banner-container{
@@ -61,8 +59,6 @@ figure {
   border-radius: 25px; /* mismo borde que .banner-bg */
 }
 
-
-
 .banner-bg {
   position: relative;
   background-color: #e6a7ce;
@@ -83,7 +79,6 @@ figure {
   margin: 3rem auto;
   text-align:center;
 }
-
 
 .banner-title,
 .banner-description{
@@ -107,7 +102,7 @@ figure {
   border: none;
   outline: none;
   color: #ffffff;
-  background-color: #eac6dc83;
+  background-color: #b5ceba83;
   padding: 15px 30px;
   max-width: fit-content;
   cursor: pointer;
@@ -120,12 +115,12 @@ figure {
 
 .button_cat:hover,
 .button_cat:focus{
-  background-color: #d57db579;
+  background-color: #44895979;
 }
 
 .button_info:hover,
 .button_info:focus{
-  background-color: #d57db579;
+  background-color: #44895979;
 }
 
 @media (min-width: 768px) {
@@ -146,12 +141,7 @@ figure {
   margin: 0 auto;
 }
 
-
-
-
 }
-
-
 
 /* Esconder elementos visualmente */
 .visually-hidden {
@@ -166,14 +156,6 @@ figure {
 }
 
 /* Header */
-.encabezado {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: rgb(255, 255, 255, 1);
-}
 
 .header-logo1 {
   height: 6rem;
@@ -187,7 +169,6 @@ figure {
   align-items: center;
   width: 100%;
   gap: 0;
-
 }
 
 nav ul {
@@ -225,65 +206,6 @@ nav a {
   text-decoration: none;
   color: #1d1d1d;
 }
-
-
-/* Hero-Banner
-.hero-container {
-  position: relative;
-   overflow: hidden;  
-}
-
-/* Para aplicar degradado por encima de la imagen */
-/*.hero-container::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  top: 70%;
-  width: 100%;
-  height: 30%;
-  background: linear-gradient(to bottom,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.3) 30%,
-      rgba(255, 255, 255, 0.6) 50%,
-      rgb(255, 255, 255) 90%);
-  pointer-events: none;
-  z-index: 2;
-} */
-
-/*.hero-container img {
-  display: block;
-  width: 100%;
-  height: auto;
-}*/
-
-/*.hero-banner-button {
-  position: absolute;
-  bottom: 10%; 
-  right: 10%;  
-  padding: clamp(0.8rem, 1.5vw, 1.2rem) clamp(1.5rem, 2vw, 2rem);
-  background-color: rgba(217, 155, 210, 0.45);
-  font-family: "Lato", sans-serif;
-  font-size: clamp(1.6rem, 2vw, 2.2rem); 
-  font-weight: 600;
-  color: #ffffff;
-  text-decoration: none;
-  border-radius: 4rem;
-  border: 2px solid #ffffff;
-  height: auto; 
-  max-width: 35%;
-  white-space: nowrap;
-  overflow: hidden;
-  cursor: pointer;
-  z-index: 3;
-  transition: all 0.3s ease;
-}
- */
-
-/*.hero-banner-button:hover {
-  background-color: #dc6fce8b;
-}
-*/
 
 /* Formulario de contacto */
 .contact-section {
@@ -346,7 +268,7 @@ nav a {
 .contact-form button {
   margin-top: 1rem;
   padding: 1rem;
-  background-color: #e8c5da;
+  background-color: #44895979;
   color: rgb(255, 255, 255);
   border: none;
   border-radius: 3rem;
@@ -437,7 +359,7 @@ nav a {
 }
 
 .product-button {
-  background-color: #e8c5da;
+  background-color: #8ac991;
   color: #ffffff;
   border: none;
   padding: 1.2rem 2rem;
@@ -448,23 +370,26 @@ nav a {
 }
 
 .product-button:hover {
-  background-color: #e2b4d0;
+  background-color: #448959e2;
 }
 
 /* Footer */
 footer {
   display: flex;
   justify-content: center;
+  width: 100%;
   gap: 8rem;
-  background-color: #f4edf4;
+  background-color: #8ac991;
   padding: 4rem 2rem;
   flex-wrap: wrap;
+  
 }
 
 .footer-list {
   padding: 0;
   list-style: none;
   font-family: "Lato", sans-serif;
+  font-size: 1.5rem;
 }
 
 .footer-title {
@@ -487,7 +412,7 @@ footer {
   display: flex;
   gap: 2rem;
   list-style: none;
-  padding: 0;
+ font-size: 1.5rem;
 }
 
 .footer-icons-social-networks a,
@@ -506,7 +431,7 @@ footer {
   font-size: 1.6rem;
   padding-bottom: 1rem;
   border: none;
-  background-color: #f4edf4;
+  background-color: #8ac991;
   width: 30rem;
   border-bottom: 1px solid #1d1d1d;
   outline: none;
@@ -622,4 +547,45 @@ footer {
 
  
 
+}
+
+ /* MAIN CONTENT */
+.main-content{
+  background-color: #fffff9;
+}
+
+/* FEATURES */
+.container-features{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  padding: 3rem 0;
+}
+
+.card-feature{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+
+  background-color: #ddf3ea;
+  border-radius: 1rem;
+  padding: 1.5rem 2.5rem;
+}
+
+.card-feature i{
+  font-size: 2.5rem;
+  color: #285a2d;
+}
+
+.feature-content{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 1rem;
+}
+
+
+.feature-content span{
+  font-weight: 700;
 }
