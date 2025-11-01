@@ -551,7 +551,7 @@ footer {
 
  /* MAIN CONTENT */
 .main-content{
-  background-color: #fffff9;
+  background-color: #e6e6de;
 }
 
 /* FEATURES */
@@ -588,4 +588,53 @@ footer {
 
 .feature-content span{
   font-weight: 700;
+  font-size: 1.5rem;
+  color: #1d1d1d;
 }
+
+.feature-content p{
+  color: #2d2d2d;
+  font-weight: 500;
+}
+
+/* mejores productos */
+
+.container-products{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 3rem;
+}
+
+.card-product{
+  background-color: #ffffff;
+  padding: 2rem 3rem;
+  border-radius: .5rem;
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.container-img{
+  position: relative;
+}
+
+.container-img img{
+  width: 100%;
+}
+
+.content-card-producto{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, min-content);
+  row-gap: 1rem;
+  justify-items: center;
+}
+
+.stars{
+  grid-row: 1/2;
+  grid-column: 1/-1;
+}
+
+
+
+
+
