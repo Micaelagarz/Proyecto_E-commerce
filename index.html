@@ -5,23 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Enlace de Google Fonts para iconos -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward" />
+
+    <!-- Enlace de Swiper JS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <title> Snackia </title>
 
-
-    <!-- 1ER FUENTE: PLAYFAIR DISPLAY -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-        rel="stylesheet">
-
-    <!-- 2DA FUENTE: LATO -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-        rel="stylesheet">
-
+    <!-- Enlace de Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -30,64 +23,67 @@
 </head>
 
 <body>
-
+    <!-- Header / Navbar -->
     <header>
-        <div class="container-hero">
-            <div class="container hero">
-
-                <div class="container-logo">
-                    <i class="fa-solid fa-seedling"></i>
-                    <h1 class="logo">
-                        <a href="#"> Snackia </a>
-                    </h1>
-                </div>
-
-                <form class="search-form">
-                    <input type="search" placeholder="Buscar...">
-                    <button class="btn-search">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                </form>
-
-                <div class="container-user">
+        <nav class="navbar container">
+            <a href="#" class="nav-logo">
+                <i class="fa-solid fa-seedling"></i>
+                <h2 class="logo-text">Snackia</h2>
+            </a>
+            <ul class="nav-menu">
+                <button id="menu-close-button" class="fas fa-times"></button>
+                <li class="nav-item"><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li class="nav-item"><a href="#top-products" class="nav-link">Productos</a></li>
+                <li class="nav-item"><a href="#reseñas" class="nav-link">Reseñas</a></li>
+                <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="#" class="nav-icon-user">
                     <i class="fa-solid fa-user"></i>
+                </a>
+                <a href="#" id="icon-cart" class="nav-icon-basket">
                     <i class="fa-solid fa-basket-shopping"></i>
-                    <div class="content-shopping-cart">
-                        <span class="text"> Carrito </span>
-                        <span class="number">(0)</span>
-
+                </a>
+                <div id="contador-carrito">0</div>
+                <button id="menu-open-button" class="fas fa-bars"></button>
+                <div id="cart-box" class="cart-box hidden">
+                    <h3>Mi Carrito</h3>
+                    <ul id="cart-items"></ul>
+                    <div class="cart-total">
+                        <p>Total: $<span id="cart-total">0</span></p>
+                    </div>
+                    <div class="cart-buttons">
+                        <button id="vaciar-carrito" class="clear-cart-btn">Vaciar carrito</button>
+                        <button class="continue-cart-btn">Continuar compra</button>
                     </div>
                 </div>
-
             </div>
 
-        </div>
 
-        <div class="container-navbar">
-            <nav class="navbar container">
-                <i class="fa-solid fa-bars"></i>
-                <ul class="menu">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Productos</a></li>
-                    <li><a href="#">Reseñas</a></li>
-                    <li><a href="#">Contacto</a></li>
-                    <li><a href="#">¿Cómo comprar?</a></li>
-                </ul>
-            </nav>
-        </div>
+        </nav>
     </header>
 
-    <section class="banner">
-        <div class="content-banner">
-            <p class="banner-title">Tu bienestar empieza con lo natural</p>
-            <p class="banner-description">Alimentos saludables, frescos y seleccionados para cuidar tu cuerpo todos los
-                días.</p>
-            <a href="#"> Ver catálogo </a>
-        </div>
-    </section>
+    <main>
+        <!-- Hero banner -->
+        <section id="inicio" class="hero-section">
+            <div class="container">
+                <div class="hero-details">
+                    <h2 class="title">Elegí salud</h2>
+                    <h3 class="subtitle">Todo lo que necesitás para cuidarte, en un solo lugar.</h3>
+                    <p class="description">Semillas, frutos secos, suplementos, harinas, snacks y mucho más. Todo lo que
+                        necesitás para una vida más natural.</p>
+                    <div class="buttons">
+                        <a href="#" class="button view-catalog">Ver catálogo</a>
+                        <a href="#" class="button contact-us">Contáctanos</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <img src="img/yogur.png" alt="banner" class="hero-image">
+                </div>
+            </div>
+        </section>
 
-    <main class="main-content">
-
+        <!-- Características -->
         <section class="container container-features">
             <div class="card-feature">
                 <i class="fa-solid fa-leaf"></i>
@@ -122,243 +118,130 @@
             </div>
         </section>
 
+        <div id="mensaje-cargando">Cargando productos, porfavor espere...</div>
 
-
-        <section class="container top-products">
-            <h1 class="heading-1"> Productos destacados </h1>
-
+        <!-- Opciones de top-products -->
+        <section class="top-products">
+            <h2 class="heading-1"> Productos destacados </h2>
             <div class="container-options">
                 <span class="active"> Más vendidos </span>
                 <span> Más recientes </span>
                 <span> En oferta </span>
             </div>
-
-            <div class="container-products">
-                <!-- Producto 1 -->
-                <div class="card-product">
-                    <div class="container-img">
-                        <img src="img/pistachos.png" alt="Mix de frutos secos">
-                        <span class="discount">-13%</span>
-                        <div class="button-group">
-                            <span>
-                                <i class="fa-regular fa-eye"></i>
-                            </span>
-                            <span>
-                                <i class="fa-regular fa-heart"></i>
-                            </span>
-                            <span>
-                                <i class="fa-regular fa-code-compare"></i>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="content-card-product">
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                        <h3>Pistachos x100g</h3>
-
-
-                        <p class="price">$7.500 <span>$13.000</span></p>
-                        <span class="add-cart">
-                            <p>Agregar</p>
-                        </span>
-
-
-                    </div>
-                </div>
-
-                <div class="card-product">
-                    <div class="container-img">
-                        <img src="img/almendras.png" alt="Mix de frutos secos">
-                        <span class="discount">-13%</span>
-                        <div class="button-group">
-                            <span>
-                                <i class="fa-regular fa-eye"></i>
-                            </span>
-                            <span>
-                                <i class="fa-regular fa-heart"></i>
-                            </span>
-                            <span>
-                                <i class="fa-regular fa-code-compare"></i>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="content-card-product">
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                        <h3>Almendras x100g</h3>
-                        </span>
-                        <p class="price">$7.500 <span>$13.000</span></p>
-                        <span class="add-cart">
-                            <p>Agregar</p>
-                    </div>
-                </div>
-
-
-                <!-- Producto 2 -->
-                <div class="card-product">
-                    <div class="container-img">
-                        <img src="img/anacardos.png" alt="Mix de frutos secos">
-                        <span class="discount">-13%</span>
-                        <div class="button-group">
-                            <span>
-                                <i class="fa-regular fa-eye"></i>
-                            </span>
-                            <span>
-                                <i class="fa-regular fa-heart"></i>
-                            </span>
-                            <span>
-                                <i class="fa-regular fa-code-compare"></i>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="content-card-product">
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                        <h3>Anarcardos x100g</h3>
-                        </span>
-                        <p class="price">$7.500 <span>$13.000</span></p>
-                        <span class="add-cart">
-                            <p>Agregar</p>
-                    </div>
-                </div>
-
-                <!-- Producto 3 -->
-                <div class="card-product">
-                    <div class="container-img">
-                        <img src="img/nueces.png" alt="Mix de frutos secos">
-                        <span class="discount">-13%</span>
-                        <div class="button-group">
-                            <span>
-                                <i class="fa-regular fa-eye"></i>
-                            </span>
-                            <span>
-                                <i class="fa-regular fa-heart"></i>
-                            </span>
-                            <span>
-                                <i class="fa-regular fa-code-compare"></i>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="content-card-product">
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                        <h3>Nueces x100g</h3>
-                        </span>
-                        <p class="price">$7.500 <span>$13.000</span></p>
-                        <span class="add-cart">
-                            <p>Agregar</p>
-                    </div>
-                </div>
-
         </section>
 
-        <section class="reviews-section">
+        <section id="productos-container" class="container container-products"></section>
 
-            <div class="container__left">
-                <h1>Read what our customers love about us</h1>
-                <p>
-                    Over 200 companies frim diverse sectors consult us to enhance the
-                    user experience of their products and services.
-                </p>
-                <p>
-                    We have helped companies increase their customer base and generate
-                    multifold revenue with our service.
-                </p>
-                <button>Read our success stories</button>
+        <!-- Reseñas -->
+        <section id="reseñas" class="reviews-section">
+            <h2>Reseñas</h2>
+            <div class="container swiper">
+                <div class="card-wrapper">
+                    <ul class="card-list swiper-wrapper">
+                        <li class="card-item swiper-slide">
+                            <a href="#" class="card-link">
+                                <img src="img/woman1.jpg" alt="Card image" class="card-image">
+                                <p class="badge">- Julieta S.</p>
+                                <h2 class="card-title">Excelente atención al cliente, tuve una duda antes de comprar y
+                                    respondieron rápido. El envío fue veloz y sin atrasos. Los precios están bien para
+                                    lo que ofrecen. Voy a volver a comprar sin dudar.</h2>
+                            </a>
+                        </li>
+                        <li class="card-item swiper-slide">
+                            <a href="#" class="card-link">
+                                <img src="img/woman2.jpg" alt="Card image" class="card-image">
+                                <p class="badge">- Laura M.</p>
+                                <h2 class="card-title">Compré el pack de frutos secos mixtos y me encantó. La calidad es
+                                    excelente, todo llegó bien sellado y antes de lo previsto. Además, el precio me
+                                    pareció muy justo. Ya estoy mirando qué más pedir!</h2>
+                            </a>
+                        </li>
+                        <li class="card-item swiper-slide">
+                            <a href="#" class="card-link">
+                                <img src="img/woman3.jpg" alt="Card image" class="card-image">
+                                <p class="badge">- María S.</p>
+                                <h2 class="card-title">Me gustó mucho la variedad de productos saludables que
+                                    tienen.Granola, avena, legumbres. El envío fue rápido, y el empaquetado llegó
+                                    perfecto. Ideal para quienes buscan comer mejor sin complicarse.</h2>
+                            </a>
+                        </li>
+                        <li class="card-item swiper-slide">
+                            <a href="#" class="card-link">
+                                <img src="img/woman4.jpg" alt="Card image" class="card-image">
+                                <p class="badge">- Silvia G.</p>
+                                <h2 class="card-title">Pedí café orgánico y arroz integral. La compra fue fácil, la web
+                                    clara, y el producto llegó en buen estado. Recomiendo 100%.</h2>
+                            </a>
+                        </li>
+                        <li class="card-item swiper-slide">
+                            <a href="#" class="card-link">
+                                <img src="img/woman5.jpg" alt="Card image" class="card-image">
+                                <p class="badge">- Alejandra V.</p>
+                                <h2 class="card-title">Los productos se sienten de buena calidad, los envases están bien
+                                    cerrados y las descripciones coinciden. Además, me gusta que haya opciones sin
+                                    azúcar y sin conservantes.</h2>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-slide-button swiper-button-prev"></div>
+                    <div class="swiper-slide-button swiper-button-next"></div>
+                </div>
             </div>
-
-            <div class="container__right">
-                <div class="card">
-                    <img src="/img/woman1.jpg" alt="user" />
-                    <div class="card__content">
-                        <span><i class="ri-double-quotes-l"></i></span>
-                        <div class="card__details">
-                            <p>
-                                Muy buenos productos y excelente atención. La calidad de los frutos secos y las harinas
-                                es realmente superior.
-                            </p>
-                            <h4>- Marnus Stephen</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="/img/woman2.jpg" alt="user" />
-                    <div class="card__content">
-                        <span><i class="ri-double-quotes-l"></i></span>
-                        <div class="card__details">
-                            <p>
-                                Muy buen servicio. Hice el pedido desde el interior y llegó perfecto. Todo fresco, nada
-                                roto y muy bien presentado. Se nota el cuidado.
-                            </p>
-                            <h4>- Andrew Jettpace</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="/img/woman3.jpg" alt="user" />
-                    <div class="card__content">
-                        <span><i class="ri-double-quotes-l"></i></span>
-                        <div class="card__details">
-                            <p>
-                                Primera vez que compro y quedé encantada. La página es fácil de usar, el envío llegó en
-                                tiempo y forma y el packaging es impecable. Voy a volver a comprar.
-                            </p>
-                            <h4>- Stacy Stone</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
         </section>
 
-        </div>
-
-
+        <!-- Contacto -->
+        <section id="contacto" class="contact-section">
+            <h2>Contactanos</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p>¿Tenés alguna duda? Completá el formulario y te respondemos lo antes posible.</p>
+                    <ul>
+                        <li><i class="fa-solid fa-location-dot"></i>Av. Los Aromos 2476, Local 3 – Villa Urquiza, CABA
+                            (CP 1431)</li>
+                        <li><i class="fa-solid fa-phone"></i>+54 11 1234 5678</li>
+                        <li><i class="fa-solid fa-envelope"></i>contacto@tutienda.com</li>
+                        <li><i class="fa-solid fa-clock"></i>Lunes a viernes: de 10 a 18 hs</li>
+                        <li><i class="fa-solid fa-clock"></i>Sabados: de 10 a 15 hs</li>
+                        <li><i class="fa-solid fa-clock"></i>Domingos: cerrado </li>
+                    </ul>
+                </div>
+                <form class="contact-form" action="https://formspree.io/f/mldydywr" method="POST">
+                    <div class="input-group">
+                        <input type="text" name="nombre" required>
+                        <label>Nombre</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" name="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-group">
+                        <textarea rows="5" rows="5" name="asunto" required></textarea>
+                        <label>Mensaje</label>
+                    </div>
+                    <button type="submit" class="contact-btn">
+                        Enviar mensaje
+                    </button>
+                </form>
+            </div>
+        </section>
     </main>
-
+    <!-- Footer -->
     <footer>
         <div class="footer-top">
-
             <div class="container-logo-footer">
                 <i class="fa-solid fa-seedling"></i>
                 <h2 class="logo">
                     <a href="#"> Snackia </a>
                 </h2>
             </div>
-
             <nav class="socials">
                 <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
                 <a href="#"><i class="fa-brands fa-facebook"></i></a>
                 <a href="#"><i class="fa-brands fa-youtube"></i></a>
                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
             </nav>
-
         </div>
-
         <div class="footer-bottom">
             <div>
                 <h4>Sobre nosotros</h4>
@@ -384,22 +267,11 @@
                     <li> <a href="#"> Métodos de pago </a></li>
                 </ul>
             </div>
-            <div>
-                <h4>Contacto</h4>
-                <ul>
-                    <li>
-                        <address> 123456 San Diego California </address>
-                    </li>
-                    <li> <a href="#"> WhatsApp </a></li>
-                    <li> <a href="#"> Email </a></li>
-                    <li> <a href="#"> Horarios </a></li>
-                </ul>
-            </div>
-        </div>
-
+        </div>    
     </footer>
 
-    <script src="js/script.js"></script>
+    <!-- Enlace SwiperJS script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
