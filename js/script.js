@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p class="price">$${price} <span>$${(price * 1.25).toFixed(2)}</span></p>
 
                         <span class="add-cart" data-id="${id}">
-                            <p>Agregar</p>
+                            <p>Add</p>
                         </span>
                     </div>
                 `;
