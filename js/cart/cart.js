@@ -1,150 +1,10 @@
-// Abrir y cerrar el navbar
-const menuOpenButton = document.querySelector("#menu-open-button");
-const menuCloseButton = document.querySelector("#menu-close-button");
+export function initCart(){
 
-menuOpenButton.addEventListener("click", () => {
-    // Toggle mobile menu visibility 
-    document.body.classList.toggle("show-mobile-menu");
-});
+    const contadorCarrito = document.getElementById('contador-carrito');
+    
+    cargarEventosAgregar();
+    actualizarContador();
 
-// Close menu when the close button is clicked
-menuCloseButton.addEventListener("click", () => menuOpenButton.click());
-
-new Swiper('.card-wrapper', {
-    loop: true,
-    spaceBetween: 30,
-
-    // Navigation arrows
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        dynamicBullets: true
-    },
-
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-
-    // Reponsive breakpoints
-    breakpoints: {
-        0: {
-            slidesPerView: 1
-        },
-        768: {
-            slidesPerView: 1
-        },
-        1024: {
-            slidesPerView: 1
-        },
-    }
-
-});
-
-// DOM + eventos + validación
-const form = document.querySelector(".contact-form");
-
-form.addEventListener("submit", (e) => {
-    const nombre = document.querySelector('input[name="nombre"]');
-    const email = document.querySelector('input[name="email"]');
-    const mensaje = document.querySelector('textarea[name="asunto"]');
-
-    if (nombre.value.trim() === "" || email.value.trim() === "" || mensaje.value.trim() === "") {
-        e.preventDefault();
-        alert("Todos los campos son obligatorios.");
-        return;
-    }
-
-    // Validar email (regex simple)
-    const regexEmail = /\S+@\S+\.\S+/;
-    if (!regexEmail.test(email.value)) {
-        e.preventDefault();
-        alert("El formato del correo no es válido.");
-        return;
-    }
-
-    // Si todo está bien:
-    alert("Formulario enviado correctamente!");
-});
-
-// API REST
-document.addEventListener('DOMContentLoaded', () => {
-
-    /* -------------------- FETCH PRODUCTOS -------------------- */
-    fetch("https://dummyjson.com/products/category/groceries")
-        .then(res => res.json())
-        .then(data => {
-
-            const idsPermitidos = [23, 29, 30, 34];
-            const productos = data.products.filter(p => idsPermitidos.includes(p.id));
-
-            const contenedor = document.getElementById("productos-container");
-            const mensajeCargando = document.getElementById("mensaje-cargando");
-
-            if (mensajeCargando) mensajeCargando.style.display = "none";
-
-            if (!contenedor) {
-                console.error("No se encontró #productos-container en el HTML");
-                return;
-            }
-
-            contenedor.innerHTML = "";
-
-            productos.forEach(producto => {
-                const { id, title, price, images } = producto;
-                const imgSrc = images?.[0] || "img/default.png";
-
-                const card = document.createElement("div");
-                card.classList.add("card-product");
-
-                card.innerHTML = `
-                    <div class="container-img">
-                        <img src="${imgSrc}" alt="${title}">
-                        <span class="discount">-13%</span>
-
-                        <div class="button-group">
-                            <span><i class="fa-regular fa-eye"></i></span>
-                            <span class="btn-fav"><i class="fa-regular fa-heart"></i></span>
-                            <span class="btn-add" data-id="${id}">
-                                <i class="fa-solid fa-cart-plus"></i>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="content-card-product">
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-
-                        <h3>${title}</h3>
-
-                        <p class="price">$${price} <span>$${(price * 1.25).toFixed(2)}</span></p>
-
-                        <span class="add-cart" data-id="${id}">
-                            <p>Add</p>
-                        </span>
-                    </div>
-                `;
-
-                contenedor.appendChild(card);
-            });
-
-            cargarEventosAgregar();
-            actualizarContador();
-        })
-        .catch(error => {
-            const mensaje = document.getElementById("mensaje-cargando");
-            if (mensaje) mensaje.textContent = "Error al cargar productos: " + error.message;
-            console.error("Fetch error:", error);
-        });
-
-
-
-    /* -------------------- CARRITO -------------------- */
     function obtenerCarrito() {
         return JSON.parse(localStorage.getItem('carrito')) || [];
     }
@@ -185,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderCarrito();
     }
 
-    const contadorCarrito = document.getElementById('contador-carrito');
+    
 
     function actualizarContador() {
         const carrito = obtenerCarrito();
@@ -317,4 +177,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-});
+}
+
