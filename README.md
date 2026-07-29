@@ -16,7 +16,9 @@ Fetch API
 Git
 GitHub
 Swiper.js
+
 ✨ Funcionalidades
+
 Catálogo dinámico de productos.
 Consumo de API mediante Fetch.
 Visualización de imágenes, precios y descripciones.
