@@ -1,15 +1,11 @@
 export function initMenu() {
 
-    // Abrir y cerrar el navbar
-const menuOpenButton = document.querySelector("#menu-open-button");
-const menuCloseButton = document.querySelector("#menu-close-button");
+    const menuOpenButton = document.querySelector("#menu-open-button");
 
-menuOpenButton.addEventListener("click", () => {
-    // Toggle mobile menu visibility 
-    document.body.classList.toggle("show-mobile-menu");
-});
+    if (!menuOpenButton) return;
 
-// Close menu when the close button is clicked
-menuCloseButton.addEventListener("click", () => menuOpenButton.click());
+    menuOpenButton.addEventListener("click", () => {
+        document.body.classList.toggle("show-mobile-menu");
+    });
 
 }
